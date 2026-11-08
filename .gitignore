@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# Local data and generated results
+data/
+outputs/
+runs/
+*.pt
+
+# Local configuration
+.env
+.env.*
+!.env.example
+.DS_Store

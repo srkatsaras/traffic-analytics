@@ -1,0 +1,44 @@
+services:
+  api:
+    image: traffic-analytics-backend:local
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - app-data:/app/data
+      - app-outputs:/app/outputs
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+
+  worker:
+    image: traffic-analytics-backend:local
+    command: ["python", "-m", "api.worker"]
+    volumes:
+      - app-data:/app/data
+      - app-outputs:/app/outputs
+    depends_on:
+      api:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  app-data:
+  app-outputs:

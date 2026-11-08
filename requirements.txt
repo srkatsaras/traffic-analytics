@@ -1,0 +1,6 @@
+ultralytics==8.4.197
+opencv-python
+fastapi
+uvicorn
+python-multipart
+sqlmodel

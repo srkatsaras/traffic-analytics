@@ -1,0 +1,115 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172033;
+  background: #f3f5f8;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+form,
+section {
+  background: white;
+  padding: 24px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+input,
+progress {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.preview {
+  position: relative;
+  margin-bottom: 20px;
+  background: #111;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.counting-line {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: #ffdf00;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #2457df;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled,
+fieldset:disabled button {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.counts {
+  display: flex;
+  gap: 48px;
+}
+
+.counts strong {
+  display: block;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+a {
+  color: #2457df;
+}
+
+[role="alert"] {
+  color: #a4161a;
+  overflow-wrap: anywhere;
+}
+
+.job-id {
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+}
